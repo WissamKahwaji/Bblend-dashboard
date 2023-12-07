@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { product } from "../services/product";
 import TextField from "../Components/UI/TextField";
 import FileInput from "../Components/UI/FileInput";
+import { PRODUCT_INITIAL_VALUES } from "../constants";
 
 const AddProductForm = () => {
   const colorsData = useSelector((state) => state.colorsSlice);
@@ -22,7 +23,7 @@ const AddProductForm = () => {
     watch,
     setValue,
     formState: { isSubmitting },
-  } = useForm({});
+  } = useForm({ defaultValues: PRODUCT_INITIAL_VALUES });
 
   const { mutate: AddProduct, isLoading } = useMutation({
     mutationKey: "add-product",

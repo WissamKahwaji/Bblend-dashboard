@@ -11,7 +11,7 @@ import FileInput from "../Components/UI/FileInput";
 import { createFormData } from "../utils";
 import { product } from "../services/product";
 import apiInstance from "../API/instance";
-
+import { PRODUCT_INITIAL_VALUES } from "../constants";
 const AddOffer = () => {
   const navigation = useNavigate();
   const {
@@ -21,6 +21,7 @@ const AddOffer = () => {
     formState: { isSubmitting },
   } = useForm({
     defaultValues: {
+      ...PRODUCT_INITIAL_VALUES,
       type: "offer",
     },
   });

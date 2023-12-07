@@ -11,6 +11,7 @@ import { product } from "../services/product";
 import LoadingPage from "./LoadingPage/LoadingPage";
 import TextField from "../Components/UI/TextField";
 import FileInput from "../Components/UI/FileInput";
+import { PRODUCT_INITIAL_VALUES } from "../constants";
 
 const EditProductForm = () => {
   const data = useLoaderData();
@@ -28,7 +29,7 @@ const EditProductForm = () => {
     watch,
     setValue,
     formState: { isSubmitting },
-  } = useForm({});
+  } = useForm({ defaultValues: PRODUCT_INITIAL_VALUES });
 
   useEffect(() => {
     if (data) {
@@ -47,15 +48,15 @@ const EditProductForm = () => {
       setValue("expAR", data.expAR);
 
       setValue("type", data.type);
-      setValue("deepDetails.first.size", data.deepDetails.first.size);
-      setValue("deepDetails.first.price", data.deepDetails.first.price);
-      setValue("deepDetails.first.weight", data.deepDetails.first.weight);
-      setValue("deepDetails.second.size", data.deepDetails.second.size);
-      setValue("deepDetails.second.price", data.deepDetails.second.price);
-      setValue("deepDetails.second.wight", data.deepDetails.second.weight);
-      setValue("deepDetails.third.size", data.deepDetails.third.size);
-      setValue("deepDetails.third.price", data.deepDetails.third.price);
-      setValue("deepDetails.third.wight", data.deepDetails.third.weight);
+      setValue("deepDetails.first.size", data.deepDetails?.first?.size);
+      setValue("deepDetails.first.price", data.deepDetails?.first?.price);
+      setValue("deepDetails.first.weight", data.deepDetails?.first?.weight);
+      setValue("deepDetails.second.size", data.deepDetails?.second?.size);
+      setValue("deepDetails.second.price", data.deepDetails?.second?.price);
+      setValue("deepDetails.second.wight", data.deepDetails?.second?.weight);
+      setValue("deepDetails.third.size", data.deepDetails?.third?.size);
+      setValue("deepDetails.third.price", data.deepDetails?.third?.price);
+      setValue("deepDetails.third.wight", data.deepDetails?.third?.weight);
     }
   }, [setValue, data]);
 

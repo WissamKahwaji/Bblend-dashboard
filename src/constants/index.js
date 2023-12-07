@@ -1,0 +1,18 @@
+export const PRODUCT_INITIAL_VALUES = {
+  title: "",
+  titleAr: "",
+  desc: "",
+  descAR: "",
+  ing: "",
+  IngAR: "",
+  usage: "",
+  usageAR: "",
+  exp: "",
+  expAR: "",
+  type: "",
+  deepDetails: {},
+  img: null,
+  first: null,
+  second: null,
+  third: null,
+};
