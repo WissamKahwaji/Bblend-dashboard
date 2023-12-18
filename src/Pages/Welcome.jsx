@@ -15,7 +15,7 @@ const Welcome = () => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    if (pass === "bBlendAdminIsEditing") {
+    if (pass === "bBlendDash@123") {
       setIsAuth(true);
     } else {
       setIsAuth(false);
