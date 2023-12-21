@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { createFormData } from "../utils";
 import { toast } from "react-toastify";
 import FileInput from "../Components/UI/FileInput";
+import privetInstance from "../API/privetInstance";
 const EditContactInfo = () => {
   const data = useLoaderData();
   const {
@@ -29,7 +30,7 @@ const EditContactInfo = () => {
   const onSubmit = async (values) => {
     const data = createFormData(values);
     try {
-      const res = await apiInstance.put(`/contactUs/edit`, data);
+      const res = await privetInstance.put(`/contactUs/edit`, data);
       if (res) toast.success("Update contact info successfully.");
     } catch (error) {
       toast.error("Filed to update contact info,please try again.");

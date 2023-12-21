@@ -6,6 +6,7 @@ import PageContainer from "../Components/UI/PageContainer";
 import { useSelector } from "react-redux";
 import apiInstance from "../API/instance";
 import LoadingPage from "./LoadingPage/LoadingPage";
+import privetInstance from "../API/privetInstance";
 const DeleteProduct = () => {
   const data = useLoaderData();
   const colorsData = useSelector((state) => state.colorsSlice);
@@ -64,7 +65,7 @@ export const deleteProductAction = async ({ request }) => {
   const confirmation = window.confirm("Continue The Process?");
   if (confirmation) {
     try {
-      const response = await apiInstance.delete(
+      const response = await privetInstance.delete(
         `${baseURL}/products/${productId}`
       );
       if (response) {

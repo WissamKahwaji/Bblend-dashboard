@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { ImEye } from "react-icons/im";
 import OrderDetailsModal from "../Components/UI/OrderDetailsModal";
 import apiInstance from "../API/instance";
+import privetInstance from "../API/privetInstance";
 const Orders = () => {
   const data = useLoaderData();
 
@@ -132,9 +133,12 @@ export const ordersAction = async ({ request }) => {
 
   try {
     if (confirmation) {
-      const response = await apiInstance.put(`/orders/${orderId}/orderStatus`, {
-        status,
-      });
+      const response = await privetInstance.put(
+        `/orders/${orderId}/orderStatus`,
+        {
+          status,
+        }
+      );
       if (response.data) {
         redirect("controls/check_orders");
       }

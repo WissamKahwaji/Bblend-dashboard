@@ -1,15 +1,16 @@
 import apiInstance from "../API/instance";
+import privetInstance from "../API/privetInstance";
 import { createFormData } from "../utils/index";
 class Product {
   async CreateProduct(data) {
     const _data = createFormData(data);
 
-    const res = await apiInstance.post(`products/add`, _data);
+    const res = await privetInstance.post(`products/add`, _data);
     return res;
   }
   async UpdateProduct({ data, productId }) {
     const _data = createFormData(data);
-    const res = await apiInstance.put(`/products/${productId}`, _data);
+    const res = await privetInstance.put(`/products/${productId}`, _data);
     return res;
   }
 }

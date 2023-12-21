@@ -12,6 +12,7 @@ import { createFormData } from "../utils";
 import { product } from "../services/product";
 import apiInstance from "../API/instance";
 import { PRODUCT_INITIAL_VALUES } from "../constants";
+import privetInstance from "../API/privetInstance";
 const AddOffer = () => {
   const navigation = useNavigate();
   const {
@@ -32,7 +33,7 @@ const AddOffer = () => {
   const onSubmit = async (values) => {
     const data = createFormData(values);
     try {
-      const res = await apiInstance.post("/offers/add", data);
+      const res = await privetInstance.post("/offers/add", data);
       if (res) toast.success(`add offer to ${values.title} successfully`);
     } catch (error) {
       toast.error(`failed to add offer to ${values.title}`);

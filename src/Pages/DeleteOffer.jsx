@@ -5,6 +5,7 @@ import PageContainer from "../Components/UI/PageContainer";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import apiInstance from "../API/instance";
+import privetInstance from "../API/privetInstance";
 const DeleteOffer = () => {
   const data = useLoaderData();
   const colorsData = useSelector((state) => state.colorsSlice);
@@ -67,9 +68,7 @@ export const deleteOffersAction = async ({ request }) => {
   const confirmation = window.confirm("Continue The Process?");
   if (confirmation) {
     try {
-      const response = await apiInstance(`/offers/${productId}`, {
-        method: "delete",
-      });
+      const response = await privetInstance.delete(`/offers/${productId}`);
       if (response) redirect("/control/delete_offer");
     } catch (error) {
       toast.error(`failed to delete ${productTitle}`);

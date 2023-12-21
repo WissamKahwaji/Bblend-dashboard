@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import PageContainer from "../Components/UI/PageContainer";
 import { useForm } from "react-hook-form";
 import TextArea from "../Components/UI/TextArea";
-import { useMutation } from "react-query";
+import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { product } from "../services/product";
 import LoadingPage from "./LoadingPage/LoadingPage";
