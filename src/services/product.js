@@ -1,4 +1,3 @@
-import apiInstance from "../API/instance";
 import privetInstance from "../API/privetInstance";
 import { createFormData } from "../utils/index";
 class Product {
@@ -10,7 +9,10 @@ class Product {
   }
   async UpdateProduct({ data, productId }) {
     const _data = createFormData(data);
-    const res = await privetInstance.put(`/products/${productId}`, _data);
+    const res = await privetInstance.put(
+      `/products/bb-edit/${productId}`,
+      _data
+    );
     return res;
   }
 }

@@ -90,12 +90,14 @@ const EditProductForm = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={`flex flex-col md:grid gap-8 md:grid-cols-2`}>
             <TextField
+              required
               label={`Enter the Product Title`}
               name={`title`}
               type="text"
               register={register}
             />
             <TextField
+              required
               label={`Enter the Product Title`}
               name={`titleAr`}
               type="text"
@@ -104,6 +106,7 @@ const EditProductForm = () => {
 
             <FileInput
               name={"img"}
+              required
               label={"Enter the Product Image :"}
               setValue={setValue}
               imgSrc={data.img}
@@ -150,7 +153,6 @@ const EditProductForm = () => {
               register={register}
               name={"ing"}
               label={"Enter The Ingredients of the Product :"}
-              required
               className={`p-1 border  w-60 rounded-lg outline-none`}
               labelProps={{ className: "text-xl mb-2" }}
             />
@@ -158,7 +160,6 @@ const EditProductForm = () => {
               register={register}
               name={"ingAR"}
               label={"Enter The Ingredients of the Product AR:"}
-              required
               className={`p-1 border  w-60 rounded-lg outline-none`}
               labelProps={{ className: "text-xl mb-2" }}
             />
@@ -166,7 +167,6 @@ const EditProductForm = () => {
               register={register}
               name={"usage"}
               label={"Enter the Usage of the Product :"}
-              required
               className={`p-1 border  w-60 rounded-lg outline-none`}
               labelProps={{ className: "text-xl mb-2" }}
             />
@@ -174,7 +174,6 @@ const EditProductForm = () => {
               register={register}
               name={"usageAR"}
               label={"Enter the Usage of the Product AR:"}
-              required
               className={`p-1 border  w-60 rounded-lg outline-none`}
               labelProps={{ className: "text-xl mb-2" }}
             />
@@ -182,7 +181,6 @@ const EditProductForm = () => {
               register={register}
               name={"exp"}
               label={"Enter the Expiry Information of the Product :"}
-              required
               className={`p-1 border  w-60 rounded-lg outline-none`}
               labelProps={{ className: "text-xl mb-2" }}
             />
@@ -190,7 +188,6 @@ const EditProductForm = () => {
               register={register}
               name={"expAR"}
               label={"Enter the Expiry Information of the Product AR:"}
-              required
               className={`p-1 border  w-60 rounded-lg outline-none`}
               labelProps={{ className: "text-xl mb-2" }}
             />
@@ -217,6 +214,7 @@ const EditProductForm = () => {
               type="text"
             />
             <TextField
+              required
               register={register}
               label={`Enter the Product wight for Size 1`}
               name={`deepDetails.first.wight`}
@@ -224,14 +222,12 @@ const EditProductForm = () => {
             />
             {/*  */}
             <TextField
-              required
               register={register}
               label={`Enter the Product Size 2`}
               name={`deepDetails.second.size`}
               type="text"
             />
             <TextField
-              required
               register={register}
               label={`Enter the Product Price for Size 2`}
               name={`deepDetails.second.price`}
@@ -245,14 +241,12 @@ const EditProductForm = () => {
             />
             {/*  */}
             <TextField
-              required
               register={register}
               label={`Enter the  Product Size 3`}
               name={`deepDetails.third.size`}
               type="text"
             />
             <TextField
-              required
               register={register}
               label={`Enter the  Product Price for Size 3`}
               name={`deepDetails.third.price`}

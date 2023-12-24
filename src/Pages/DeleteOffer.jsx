@@ -68,7 +68,9 @@ export const deleteOffersAction = async ({ request }) => {
   const confirmation = window.confirm("Continue The Process?");
   if (confirmation) {
     try {
-      const response = await privetInstance.delete(`/offers/${productId}`);
+      const response = await privetInstance.delete(
+        `/offers/bb-delete/${productId}`
+      );
       if (response) redirect("/control/delete_offer");
     } catch (error) {
       toast.error(`failed to delete ${productTitle}`);

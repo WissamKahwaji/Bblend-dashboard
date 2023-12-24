@@ -66,7 +66,7 @@ export const deleteProductAction = async ({ request }) => {
   if (confirmation) {
     try {
       const response = await privetInstance.delete(
-        `${baseURL}/products/${productId}`
+        `${baseURL}/products/bb-remove/${productId}`
       );
       if (response) {
         redirect("controls/delete_product");

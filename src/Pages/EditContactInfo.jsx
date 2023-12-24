@@ -30,7 +30,7 @@ const EditContactInfo = () => {
   const onSubmit = async (values) => {
     const data = createFormData(values);
     try {
-      const res = await privetInstance.put(`/contactUs/edit`, data);
+      const res = await privetInstance.put(`/contactUs/bb-edit`, data);
       if (res) toast.success("Update contact info successfully.");
     } catch (error) {
       toast.error("Filed to update contact info,please try again.");

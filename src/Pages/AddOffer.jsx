@@ -33,7 +33,7 @@ const AddOffer = () => {
   const onSubmit = async (values) => {
     const data = createFormData(values);
     try {
-      const res = await privetInstance.post("/offers/add", data);
+      const res = await privetInstance.post("/offers/bb-add", data);
       if (res) toast.success(`add offer to ${values.title} successfully`);
     } catch (error) {
       toast.error(`failed to add offer to ${values.title}`);
