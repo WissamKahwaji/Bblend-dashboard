@@ -100,14 +100,12 @@ const EditProductForm = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={`flex flex-col md:grid gap-8 md:grid-cols-2`}>
             <TextField
-              required
               label={`Enter the Product Title`}
               name={`title`}
               type="text"
               register={register}
             />
             <TextField
-              required
               label={`Enter the Product Title`}
               name={`titleAr`}
               type="text"
@@ -146,7 +144,6 @@ const EditProductForm = () => {
               register={register}
               name={"desc"}
               label={"Enter The Description of the Product :"}
-              required
               className={`p-1 border  w-60 rounded-lg outline-none`}
               labelProps={{ className: "text-xl mb-2" }}
             />
@@ -154,7 +151,6 @@ const EditProductForm = () => {
               register={register}
               name={"descAR"}
               label={"Enter The Description of the Product AR:"}
-              required
               className={`p-1 border  w-60 rounded-lg outline-none`}
               labelProps={{ className: "text-xl mb-2" }}
             />
@@ -202,28 +198,24 @@ const EditProductForm = () => {
             />
 
             <TextField
-              required
               register={register}
               label={`Enter the Product Prefix`}
               name={`type`}
               type="text"
             />
             <TextField
-              required
               register={register}
               label={`Enter the Product Size 1`}
               name={`deepDetails.first.size`}
               type="text"
             />
             <TextField
-              required
               register={register}
               label={`Enter the Product Price for Size 1`}
               name={`deepDetails.first.price`}
               type="text"
             />
             <TextField
-              required
               register={register}
               label={`Enter the Product wight for Size 1`}
               name={`deepDetails.first.wight`}

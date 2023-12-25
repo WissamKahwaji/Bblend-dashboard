@@ -56,14 +56,12 @@ const AddProductForm = () => {
             <TextField
               label={`Enter the Product Title`}
               name={`title`}
-              required
               type="text"
               register={register}
             />
             <TextField
               label={`Enter the Product Title`}
               name={`titleAr`}
-              required
               type="text"
               register={register}
             />
@@ -71,7 +69,6 @@ const AddProductForm = () => {
             <FileInput
               name={"img"}
               label={"Enter the Product Image :"}
-              required
               setValue={setValue}
               imgSrc={""}
             />
@@ -101,7 +98,6 @@ const AddProductForm = () => {
               register={register}
               name={"desc"}
               label={"Enter The Description of the Product :"}
-              required
               className={`p-1 border  w-60 rounded-lg outline-none`}
               labelProps={{ className: "text-xl mb-2" }}
             />
@@ -109,7 +105,6 @@ const AddProductForm = () => {
               register={register}
               name={"descAR"}
               label={"Enter The Description of the Product AR:"}
-              required
               className={`p-1 border  w-60 rounded-lg outline-none`}
               labelProps={{ className: "text-xl mb-2" }}
             />
@@ -157,28 +152,24 @@ const AddProductForm = () => {
             />
 
             <TextField
-              required
               register={register}
               label={`Enter the Product Prefix`}
               name={`type`}
               type="text"
             />
             <TextField
-              required
               register={register}
               label={`Enter the Product Size 1`}
               name={`deepDetails.first.size`}
               type="text"
             />
             <TextField
-              required
               register={register}
               label={`Enter the Product Price for Size 1`}
               name={`deepDetails.first.price`}
               type="text"
             />
             <TextField
-              required
               register={register}
               label={`Enter the Product wight for Size 1`}
               name={`deepDetails.first.wight`}
