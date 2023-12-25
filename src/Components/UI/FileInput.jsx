@@ -6,7 +6,7 @@ const FileInput = ({ label, imgSrc, name, required, setValue }) => {
     if (e.target && e.target.files[0]) setValue(name, e.target.files[0]);
     setimgSrc(URL.createObjectURL(e.target.files[0]));
   };
-  console.log(imgSrc || imgSrc || "");
+
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor="file">{label}</label>

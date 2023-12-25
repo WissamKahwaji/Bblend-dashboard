@@ -35,7 +35,10 @@ const EditProductForm = () => {
     if (data) {
       setValue("title", data.title);
       setValue("titleAr", data.titleAr);
-
+      setValue("img", data.img ?? "");
+      setValue("first", data?.imgs?.first ?? "");
+      setValue("second", data?.imgs?.second ?? "");
+      setValue("third", data?.imgs?.third ?? "");
       setValue("desc", data.desc);
       setValue("descAR", data.descAR);
 
@@ -74,7 +77,14 @@ const EditProductForm = () => {
   });
 
   const onSubmit = async (values) => {
-    UpdateProduct(values);
+    const { img, first, second, third, ...rest } = values;
+    UpdateProduct({
+      img: typeof img === "string" ? null : img,
+      first: typeof first === "string" ? null : first,
+      second: typeof second === "string" ? null : second,
+      third: typeof third === "string" ? null : third,
+      ...rest,
+    });
   };
 
   if (!data) return <LoadingPage />;
@@ -106,7 +116,6 @@ const EditProductForm = () => {
 
             <FileInput
               name={"img"}
-              required
               label={"Enter the Product Image :"}
               setValue={setValue}
               imgSrc={data.img}
@@ -116,21 +125,21 @@ const EditProductForm = () => {
               name={"first"}
               label={"Enter the Product First Image"}
               setValue={setValue}
-              imgSrc={data.imgs.first}
+              imgSrc={data.imgs?.first}
             />
 
             <FileInput
               name={"second"}
               label={"Enter the Product Second Image"}
               setValue={setValue}
-              imgSrc={data.imgs.second}
+              imgSrc={data.imgs?.second}
             />
 
             <FileInput
               name={"third"}
               label={"Enter the Product Third Image"}
               setValue={setValue}
-              imgSrc={data.imgs.third}
+              imgSrc={data.imgs?.third}
             />
 
             <TextArea
